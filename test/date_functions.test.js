@@ -36,22 +36,18 @@ test("testing add function test case 5", () => {
 
 test("testing format function test case 6", () => {
   const result = format(new Date(), "MMMM-DD/YYYY H a");
-  console.log(result);
   expect(result).toBe("September-17/2020 18 p");
 });
 
 test("testing format function test case 7", () => {
   const result = format(new Date(), "MMMM-DD/YYYY H aa");
-  console.log(result);
   expect(result).toBe("September-17/2020 18 pm");
 });
 test("testing format function test case 7", () => {
   const result = format(new Date(), "MMMM-DD/YYYY H AA");
-  console.log(result);
   expect(result).toBe("September-17/2020 18 PM");
 });
 test("testing format function test case 7", () => {
   const result = format(new Date(), "MMMM-DD/YYYY HH");
-  console.log(result);
   expect(result).toBe("September-17/2020 18");
 });
