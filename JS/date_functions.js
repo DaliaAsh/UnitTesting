@@ -9,34 +9,6 @@ exports.fromFormat = function (dateString, dateFormat) {
   let month;
   let day;
   str = dateFormat;
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let months_full_name = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
   for (let i = 0; i < str.length; i++) {
     if (str[i] === "M") {
       count_M++;
@@ -331,11 +303,18 @@ exports.add = function (date, amount) {
         count_days++;
       }
     }
-    //curr_date.setHours(hours_curr);
-  
     let curr_days_ = curr_date.getDate();
     curr_date.setDate(curr_days_ + count_days);
-    return curr_date.getMonth()+1+"-" + curr_date.getDate()+"-"+curr_date.getFullYear() + " "+ curr_date.getHours();
+    return (
+      curr_date.getMonth() +
+      1 +
+      "-" +
+      curr_date.getDate() +
+      "-" +
+      curr_date.getFullYear() +
+      " " +
+      curr_date.getHours()
+    );
   } else {
     days = arr.slice(0, d_index);
     days_str = "";
@@ -353,6 +332,15 @@ exports.add = function (date, amount) {
     }
     curr_date.setDate(days_curr);
     curr_date.setMonth(curr_date.getMonth() + count_months);
-    return  curr_date.getMonth()+1+"-" + curr_date.getDate()+"-"+curr_date.getFullYear() + " "+ curr_date.getHours();
+    return (
+      curr_date.getMonth() +
+      1 +
+      "-" +
+      curr_date.getDate() +
+      "-" +
+      curr_date.getFullYear() +
+      " " +
+      curr_date.getHours()
+    );
   }
 };
