@@ -295,7 +295,9 @@ exports.add = function (date, amount) {
       hours_str += item;
     });
     num_hours = Number(hours_str);
+
     hours_curr = curr_date.getHours() + num_hours;
+
     let count_days = 0;
     if (hours_curr > 23) {
       while (hours_curr > 23) {
@@ -305,6 +307,7 @@ exports.add = function (date, amount) {
     }
     let curr_days_ = curr_date.getDate();
     curr_date.setDate(curr_days_ + count_days);
+    curr_date.setHours(hours_curr);
     return (
       curr_date.getMonth() +
       1 +
@@ -332,6 +335,7 @@ exports.add = function (date, amount) {
     }
     curr_date.setDate(days_curr);
     curr_date.setMonth(curr_date.getMonth() + count_months);
+
     return (
       curr_date.getMonth() +
       1 +
